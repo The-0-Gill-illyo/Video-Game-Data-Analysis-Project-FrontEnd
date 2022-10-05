@@ -27,7 +27,7 @@ function App() {
           <i className='fa-fa search'>Search</i> 
         </button>
       </div>
-      <Game />
+      <Game parentEntries={games}/>
     </div>
   );
 }

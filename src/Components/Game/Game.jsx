@@ -18,6 +18,21 @@ const Game = (props) => {
                         <th>Global Sales</th>
                     </tr>
                 </thead>
+                <tbody>
+                    <tr>
+                        <td>{props.parentEntries.game_rank}</td>
+                        <td>{props.parentEntries.name}</td>
+                        <td>{props.parentEntries.platform}</td>
+                        <td>{props.parentEntries.year}</td>
+                        <td>{props.parentEntries.genre}</td>
+                        <td>{props.parentEntries.publisher}</td>
+                        <td>{props.parentEntries.northamericasales}</td>
+                        <td>{props.parentEntries.europesales}</td>
+                        <td>{props.parentEntries.japansales}</td>
+                        <td>{props.parentEntries.othersales}</td>
+                        <td>{props.parentEntries.globalsales}</td>
+                    </tr>
+                </tbody>
             </table> 
         </div>
      );
