@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
+import Game from './Components/Game/Game';
+
 function App() {
 
   const [games, setGames] = useState([]);
@@ -19,10 +21,13 @@ function App() {
 
   return (
     <div>
-      <input type="text" className="searchTerm" placeholder='game search'></input>
-      <button type="submit" className='searchBar'>
-        <i className='fa-fa search'>Search</i> 
-      </button>
+      <div>
+        <input type="text" className="searchTerm" placeholder='game search'></input>
+        <button type="submit" className='searchBar'>
+          <i className='fa-fa search'>Search</i> 
+        </button>
+      </div>
+      <Game />
     </div>
   );
 }
