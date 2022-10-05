@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 import Game from './Components/Game/Game';
+import Search from './Components/Search/Search';
 
 function App() {
 
@@ -21,12 +22,7 @@ function App() {
 
   return (
     <div>
-      <div>
-        <input type="text" className="searchTerm" placeholder='game search'></input>
-        <button type="submit" className='searchBar'>
-          <i className='fa-fa search'>Search</i> 
-        </button>
-      </div>
+      <Search />
       <Game parentEntries={games}/>
     </div>
   );
