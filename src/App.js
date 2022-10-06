@@ -4,20 +4,27 @@ import './App.css';
 
 import Game from './Components/Game/Game';
 import Search from './Components/Search/Search';
+import RecordsGraph from './Components/RecordsGraph/RecordsGraph';
 
 function App() {
 
   const [games, setGames] = useState([]);
 
   useEffect(() => {
+    fetchSearchResults()
   }, [])
 
-  
+  const fetchSearchResults = async () => {
+    let response = await axios.get("http://localhost:8080/all")
+    setGames(response.data);
+  }
+
  
 
   return (
     <div>
-      <Search />
+      <RecordsGraph parentEntries={games}/>
+      {/* <Search /> */}
       
     </div>
   );
