@@ -6,7 +6,20 @@ const RecordsGraph = (props) => {
 
         let filterData = props.parentEntries.filter(game => game.year >= 2013)
 
-        console.log(filterData)
+        console.log("Filtered Data", filterData)
+
+        let platforms = filterData.map(game => {
+            return game.platform
+        });
+        console.log("Platform Data", platforms)
+
+        let originalPlatfrom = [...new Set(platforms)]
+        console.log(originalPlatfrom)
+
+        let consoleArray = originalPlatfrom.map(platform =>{
+            let TotalConsoleGames = filterData.filter(game => game.platform == platform)
+        })
+            console.log(consoleArray)
 
         const data = [
             ["Platform", "Sales"],
@@ -32,7 +45,6 @@ const RecordsGraph = (props) => {
             width="100%"
             height="400px"
             data={DataTable()}
-            options={DataTable()}
             />
         </div>
         );
