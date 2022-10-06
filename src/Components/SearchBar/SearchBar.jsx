@@ -29,11 +29,3 @@ const SearchBar = (props) => {
 export default SearchBar;
 
 
-{/* <div className="container">
-            <form onSubmit={handleSubmit}>             
-              <input type="text"  className="searchTerm" onChange={(event)=>setSearchInput(event.target.value)} placeholder="SEARCH"></input>
-              <button type='submit' className="searchButton">
-              <i className="fa-fa search">search</i>
-              </button>
-             
-            </form> */}
