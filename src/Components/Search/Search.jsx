@@ -51,10 +51,17 @@ const Search = (props) => {
                 return(
                   <tr key={index}>
                     <td>{game.name}</td>
+                    <td>{game.game_rank}</td>
                     <td>{game.platform}</td>
                     <td>{game.year}</td>
+                    <td>{game.genre}</td>
                     <td>{game.publisher}</td>
-                    <button onClick={getGameById(game.id)}>See More</button>
+                    <td>{game.northamericasales}</td>
+                    <td>{game.europesales}</td>
+                    <td>{game.japansales}</td>
+                    <td>{game.othersales}</td>
+                    <td>{game.globalsales}</td>
+                    {/* <button type="more" onClick={getGameById(game.id)}>See More</button> */}
                     {/* <Game parentEntries={games}/> */}
                   </tr>
                 )
