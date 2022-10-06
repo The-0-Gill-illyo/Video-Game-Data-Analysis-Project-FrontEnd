@@ -7,6 +7,8 @@ import axios from "axios";
 const Search = (props) => {
   const [searchGames, setSearchGames] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const [videoGame, setVideoGame] = useState([])
+
   useEffect(() => {
   fetchSearchResults()
   }, [searchInput])
@@ -20,22 +22,39 @@ const Search = (props) => {
     setSearchGames(response.data)
     let filteredSearch = searchGames.filter(game => game.name.includes(searchInput));
     console.log(filteredSearch)
+    setVideoGame(filteredSearch)
   }
 
 
       return ( 
-        <SearchBar searchGames={passedSearchTerms}/>
-        
+        <div>
+          <SearchBar searchGames={passedSearchTerms}/>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Platform</th>
+                <th>Year</th>
+                <th>Publisher</th>
+              </tr>
+            </thead>
+            <tbody>
+              {videoGame.map((game) => {
+                return(
+                  <tr>
+                    <td>{game.name}</td>
+                    <td>{game.platform}</td>
+                    <td>{game.year}</td>
+                    <td>{game.publisher}</td>
+                  </tr>
+                )
+              })}
+             
+            </tbody>
+          </table>
+        </div>
         );
         
       }
       export default Search;
       
-      
-      // let filteredGameSelection = game.filter(element => element.id == "game")
-      // const [searchResulst, SetSearchResults] = useState([]);
-      // useEffect(() => {
-      //   function searchByName(searchInput) {
-      //     return searchGames.name = searchInput
-      //   }
-      //   },[])
