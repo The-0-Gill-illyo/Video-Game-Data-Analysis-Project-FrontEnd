@@ -8,24 +8,21 @@ const Search = (props) => {
   const [searchGames, setSearchGames] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   useEffect(() => {
-  console.log("response", searchInput)
   fetchSearchResults()
-  console.log("Search Games")
   }, [searchInput])
 
   function passedSearchTerms(searchTerm){
-    
     setSearchInput(searchTerm)
   }
   const fetchSearchResults = async () => {
     let response = await axios.get("http://localhost:8080/all")
     console.log("GameResults:", response.data)
-    setSearchGames(response.data.items)
-    
-    let filteredSearch = searchGames.filter(selectGame = selectGame.name);
-    return filteredSearch
-    
+    setSearchGames(response.data)
+    let filteredSearch = searchGames.filter(game => game.name.includes(searchInput));
+    console.log(filteredSearch)
   }
+
+
       return ( 
         <SearchBar searchGames={passedSearchTerms}/>
         
