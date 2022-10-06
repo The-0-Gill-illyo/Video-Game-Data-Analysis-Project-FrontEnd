@@ -1,7 +1,14 @@
+import { useEffect, useState } from "react";
 
 
 
-const Search = () => {
+const Search = (props) => {
+    const [searchGames, setSearchGames] = useState([]);
+    const [searchInput, setSearchInput] = useState("");
+    useEffect(() => {
+
+  console.log("Search Games")
+    }, [])
     return ( 
     <div>
         <input type="text" className="searchTerm" placeholder='game search'></input>
