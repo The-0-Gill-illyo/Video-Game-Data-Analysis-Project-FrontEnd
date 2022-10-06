@@ -17,16 +17,26 @@ const RecordsGraph = (props) => {
         console.log(originalPlatfrom)
 
         let consoleArray = originalPlatfrom.map(platform =>{
-            let TotalConsoleGames = filterData.filter(game => game.platform == platform)
+            let totalConsoleGames = filterData.filter(game => game.platform == platform)
+            for(totalConsoleGames === filterData){
+
+            }
         })
             console.log(consoleArray)
 
         const data = [
             ["Platform", "Sales"],
-            ["2014", 1000],
-            ["2015", 1170],
-            ["2016", 660],
-            ["2017", 1030],
+                ["PS3", 1000],
+                ["X360", 1170],
+                ["PS4", 660],
+                ["3DS", 1030],
+                ["XOne", 1030],
+                ["WIIU", 1030],
+                ["WII", 1030],
+                ["PC", 1030],
+                ["PSV", 1030],
+                ["DS", 1030],
+                ["PSP", 1030],
             ];
 
             return data;
