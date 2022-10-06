@@ -28,11 +28,11 @@ const Search = (props) => {
   }
 
 
-  async function getGameById(id){
-    let response = await axios.get(`http://localhost:8080/getById/${id}`);
-    setGames(response.data);
-    console.log(response.data)
-  }
+  // async function getGameById(id){
+  //   let response = await axios.get(`http://localhost:8080/getById/${id}`);
+  //   setGames(response.data);
+  //   console.log(response.data)
+  // }
 
       return ( 
         <div>
@@ -41,9 +41,17 @@ const Search = (props) => {
             <thead>
               <tr>
                 <th>Name</th>
+                <th>Game Rank</th>
                 <th>Platform</th>
                 <th>Year</th>
                 <th>Publisher</th>
+                <th>Genre</th>
+                <th>Publisher</th>
+                <th>North American Sales</th>
+                <th>Europe Sales</th>
+                <th>Japan Sales</th>
+                <th>Other Sales</th>
+                <th>Global Sales</th>
               </tr>
             </thead>
             <tbody>
