@@ -1,72 +1,47 @@
-import { useEffect } from "react"
 import {Chart} from 'react-google-charts';
 
 
 const CustomRespose = (props) => {
    
-    useEffect(() => {genreSales()
-    },)
-        function genreSales() {
+    let genreData = props.parentEntries
 
-            let filteredGenres = props.parentEntries
+    function genreSales() {
+        let genre = genreData.map(game =>{
+            return game.genre 
+        })
+        let saletype = [...new Set(genre)]
 
-            let genre = props.parentEntries.map(game =>{
-                return game.genre 
-            })
-            console.log(genre)
-            let saletype = [...new Set(genre)]
-            console.log("What was the most popular genre in game sales over the years?",saletype)
-
-            // let genreArray = saletype.map(game => {
-            //     return game.genre
-
-                
-
-            // })
-            let filteredGenre = saletype.map(genre => {
-                let allGenres = filteredGenre.filter(game => game.genre == genre)
-                // console.log("platform game arrays", allGamesForPlatform)
-                allGenres.sum = function(items, game){
-                        return items.reduce(function(a, b){
-                            return a + b[game];
-                        }, 0);
-                    }
-                let totalGenreGames = allGenres.sum(allGenres, 'globalsales')
-                console.log("game sales", totalGenreGames)
-    
-    
-                return [genre, totalGenreGames]
-
+        let genreArray = saletype.map(genre => {
+            let allGenres = genreData.filter(game => game.genre == genre)
+            allGenres.sum = function(items, game){
+                    return items.reduce(function(a, b){
+                        return a + b[game];
+                    }, 0);
+                }
+            let totalGenreGames = allGenres.sum(allGenres, 'globalsales')
+            return [genre, totalGenreGames]
+        })
             console.log(genreArray)
 
-            const genreSales = [
-                ["Genre", "Sales"],
-                ...genreArray
-                
-                ];
-
-                return genreSales;
-
-
-            }
-            return (
-                <div>
+        const data = [
+            ["Genre", "Sales"],
+            ...genreArray
+            ];
+            return data;
+        }
+        return (
+            <div>
+                <h3>Most Popular Video Game Genres based on Global Sales</h3>
                 <Chart
                 chartType="Bar"
                 width="100%"
                 height="400px"
                 data={genreSales()}
                 />
-            </div>
-            );
-
-
-
+        </div>
+    )
 
 }
  
-
-
-
 
 export default CustomRespose;
