@@ -5,6 +5,7 @@ import './App.css';
 import Search from './Components/Search/Search';
 import RecordsGraph from './Components/RecordsGraph/RecordsGraph';
 import CustomRespose from './Components/CustomResponse/customResonse';
+import ConsoleSales from './Components/ConsoleSales/ConsoleSales';
 
 function App() {
 
@@ -23,9 +24,10 @@ function App() {
 
   return (
     <div>
-      <RecordsGraph parentEntries={games}/>
+      {/* <RecordsGraph parentEntries={games}/>
       <CustomRespose parentEntries={games}/>
-      <Search />
+      <Search /> */}
+      <ConsoleSales parentEntries={games}/>
     </div>
   );
 }

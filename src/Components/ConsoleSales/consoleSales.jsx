@@ -1,20 +1,35 @@
 import {Chart} from 'react-google-charts';
 
-const consoleSales = (props) => {
 
-    function PublisherDatatable(){
 
-        let filterPubishers = props.parentEntries.filter(platform => platform.sales >= 2013)
 
-        let platforms = filterPubishers.map(game => {
+
+
+const ConsoleSales = (props) => {
+
+    function publisherDataTable(){
+
+        let filterData = props.parentEntries.filter(platform => platform.year >= 2013)
+        console.log(filterData)
+
+        let platforms = filterData.map(game => {
             return game.platform
         });
-
         let originalPlatform = [...new Set(platforms)]
+
+
+        // let publishers = filterPublishers.map(game => {
+        //     return game.platform
+        // });
+        // let originalPublishers = [...new Set(publishers)]
 
 
         let consoleArray = originalPlatform.map(platform => {
             let allGamesForPlatform = filterData.filter(game => game.platform == platform)
+        console.log("Console Array", consoleArray)
+
+
+          
                 allGamesForPlatform.sum = function(items, game){
                     return items.reduce(function(a, b){
                         return a + b[game];
@@ -38,10 +53,10 @@ const consoleSales = (props) => {
             chartType="Bar"
             width="100%"
             height="400px"
-            data={DataTable()}
+            data={publisherDataTable()}
             />
         </div>
         );
     }
 
-export default consoleSales;
+export default ConsoleSales;

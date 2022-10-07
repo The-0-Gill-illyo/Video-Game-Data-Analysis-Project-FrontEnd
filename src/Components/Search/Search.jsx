@@ -21,10 +21,10 @@ const Search = () => {
   }
   const fetchSearchResults = async () => {
     let response = await axios.get("http://localhost:8080/all")
-    console.log("GameResults:", response.data)
+    // console.log("GameResults:", response.data)
     setSearchGames(response.data)
     let filteredSearch = searchGames.filter(game => game.name.includes(searchInput));
-    console.log(filteredSearch)
+    // console.log(filteredSearch)
     setVideoGame(filteredSearch)
   }
 
