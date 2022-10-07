@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-
+import {Chart} from 'react-google-charts';
 
 
 const CustomRespose = (props) => {
@@ -17,14 +17,23 @@ const CustomRespose = (props) => {
             console.log("What was the most popular genre in game sales over the years?",saletype)
            
 
-            const data = [
+            const genreSales = [
             [
                 "Year",
-                "Guardians of the Galaxy",
-                "The Avengers",
-                "Transformers: Age of Extinction",
-                ],
-                [1, 37.8, 80.8, 41.8],
+                "Simulation",
+                "Shooter",
+                "Action",
+                "Platform",
+                "Role-Plyaing",
+                "Racing",
+                "Sports",
+                "Misc",
+                "Fighting",
+                "Puzzle",
+                "Adventure",
+                "Strategy",
+            ],
+            [1, 37.8, 80.8, 41.8],
                 [2, 30.9, 69.5, 32.4],
                 [3, 25.4, 57, 25.7],
                 [4, 11.7, 18.8, 10.5],
@@ -47,8 +56,7 @@ const CustomRespose = (props) => {
                 chartType="Line"
                 width="100%"
                 height="400px"
-                data={data}
-                options={options}
+                data={genreSales}
                 />
             </div>
         )
