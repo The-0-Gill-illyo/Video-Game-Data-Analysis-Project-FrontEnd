@@ -44,7 +44,6 @@ const Search = (props) => {
                 <th>Game Rank</th>
                 <th>Platform</th>
                 <th>Year</th>
-                <th>Publisher</th>
                 <th>Genre</th>
                 <th>Publisher</th>
                 <th>North American Sales</th>

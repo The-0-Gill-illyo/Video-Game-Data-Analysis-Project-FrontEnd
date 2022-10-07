@@ -24,8 +24,8 @@ function App() {
   return (
     <div>
       <RecordsGraph parentEntries={games}/>
-      { <Search /> }
       <CustomRespose parentEntries={games}/>
+      <Search />
     </div>
   );
 }

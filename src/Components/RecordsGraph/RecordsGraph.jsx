@@ -26,13 +26,14 @@ const RecordsGraph = (props) => {
         })
 
         const data = [
-            ["Platform", "Sales"],
+            ["Platform", "Sales(in millions)"],
             ...consoleArray
             ];
             return data;
     }
         return ( 
         <div>
+            <h3>Global Sales for Each Video Game Console Since 2013</h3>
             <Chart
             chartType="Bar"
             width="100%"

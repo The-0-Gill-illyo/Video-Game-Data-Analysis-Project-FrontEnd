@@ -31,6 +31,7 @@ const Game = (props) => {
                         <td>{props.parentEntries.japansales}</td>
                         <td>{props.parentEntries.othersales}</td>
                         <td>{props.parentEntries.globalsales}</td>
+                        {console.log(props.parentEntries.globalsales)}
                     </tr>
                 </tbody>
             </table> 

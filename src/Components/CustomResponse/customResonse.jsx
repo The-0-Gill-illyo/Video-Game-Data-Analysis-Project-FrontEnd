@@ -24,7 +24,7 @@ const CustomRespose = (props) => {
             console.log(genreArray)
 
         const data = [
-            ["Genre", "Sales"],
+            ["Genre", "Sales(in millions)"],
             ...genreArray
             ];
             return data;
