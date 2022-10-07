@@ -8,59 +8,57 @@ const CustomRespose = (props) => {
     },)
         function genreSales() {
 
-            
+            let filteredGenres = props.parentEntries
+
             let genre = props.parentEntries.map(game =>{
                 return game.genre 
             })
             console.log(genre)
             let saletype = [...new Set(genre)]
             console.log("What was the most popular genre in game sales over the years?",saletype)
-           
+
+            // let genreArray = saletype.map(game => {
+            //     return game.genre
+
+                
+
+            // })
+            let filteredGenre = saletype.map(genre => {
+                let allGenres = filteredGenre.filter(game => game.genre == genre)
+                // console.log("platform game arrays", allGamesForPlatform)
+                allGenres.sum = function(items, game){
+                        return items.reduce(function(a, b){
+                            return a + b[game];
+                        }, 0);
+                    }
+                let totalGenreGames = allGenres.sum(allGenres, 'globalsales')
+                console.log("game sales", totalGenreGames)
+    
+    
+                return [genre, totalGenreGames]
+
+            console.log(genreArray)
 
             const genreSales = [
-            [
-                "Year",
-                "Simulation",
-                "Shooter",
-                "Action",
-                "Platform",
-                "Role-Plyaing",
-                "Racing",
-                "Sports",
-                "Misc",
-                "Fighting",
-                "Puzzle",
-                "Adventure",
-                "Strategy",
-            ],
-            [1, 37.8, 80.8, 41.8],
-                [2, 30.9, 69.5, 32.4],
-                [3, 25.4, 57, 25.7],
-                [4, 11.7, 18.8, 10.5],
-                [5, 11.9, 17.6, 10.4],
-                [6, 8.8, 13.6, 7.7],
-                [7, 7.6, 12.3, 9.6],
-                [8, 12.3, 29.2, 10.6],
-                [9, 16.9, 42.9, 14.8],
-                [10, 12.8, 30.9, 11.6],
-                [11, 5.3, 7.9, 4.7],
-                [12, 6.6, 8.4, 5.2],
-                [13, 4.8, 6.3, 3.6],
-                [14, 4.2, 6.2, 3.4],
-            ];
+                ["Genre", "Sales"],
+                ...genreArray
+                
+                ];
+
+                return genreSales;
 
 
-        return (
-            <div>
+            }
+            return (
+                <div>
                 <Chart
-                chartType="Line"
+                chartType="Bar"
                 width="100%"
                 height="400px"
-                data={genreSales}
+                data={genreSales()}
                 />
             </div>
-        )
-    }
+            );
 
 
 
