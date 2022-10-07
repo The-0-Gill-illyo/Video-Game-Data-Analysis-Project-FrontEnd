@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-import Game from './Components/Game/Game';
 import Search from './Components/Search/Search';
 import RecordsGraph from './Components/RecordsGraph/RecordsGraph';
+import CustomRespose from './Components/CustomResponse/customResonse';
 
 function App() {
 
@@ -24,8 +24,8 @@ function App() {
   return (
     <div>
       <RecordsGraph parentEntries={games}/>
-      {/* <Search /> */}
-      
+      { <Search /> }
+      <CustomRespose parentEntries={games}/>
     </div>
   );
 }
