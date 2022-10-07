@@ -5,7 +5,7 @@ import Game from "../Game/Game";
 
 
 
-const Search = (props) => {
+const Search = () => {
   const [searchGames, setSearchGames] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [videoGame, setVideoGame] = useState([])
@@ -13,10 +13,11 @@ const Search = (props) => {
 
   useEffect(() => {
   fetchSearchResults()
-  }, [searchInput])
+  },)
 
-  function passedSearchTerms(searchTerm){
-    setSearchInput(searchTerm)
+  function passedSearchTerms(event){
+   event.preventDefault(); 
+    setSearchInput(searchInput)
   }
   const fetchSearchResults = async () => {
     let response = await axios.get("http://localhost:8080/all")
@@ -51,6 +52,7 @@ const Search = (props) => {
                 <th>Japan Sales</th>
                 <th>Other Sales</th>
                 <th>Global Sales</th>
+              {/* { <button type="more" className="btn btn-primary" onClick={ () => {<Game parentEntries={games}/>}}>See More</button> } */}
               </tr>
             </thead>
             <tbody>
@@ -68,8 +70,6 @@ const Search = (props) => {
                     <td>{game.japansales}</td>
                     <td>{game.othersales}</td>
                     <td>{game.globalsales}</td>
-                    {/* <button type="more" onClick={getGameById(game.id)}>See More</button> */}
-                    {/* <Game parentEntries={games}/> */}
                   </tr>
                 )
               })}
