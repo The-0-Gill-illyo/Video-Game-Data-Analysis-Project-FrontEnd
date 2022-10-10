@@ -24,10 +24,10 @@ function App() {
 
   return (
     <div>
-      {/* <RecordsGraph parentEntries={games}/>
+      <RecordsGraph parentEntries={games}/>
       <CustomRespose parentEntries={games}/>
-      <Search /> */}
-      <ConsoleSales parentEntries={games}/>
+      <Search />
+      {/* <ConsoleSales parentEntries={games}/> */}
     </div>
   );
 }

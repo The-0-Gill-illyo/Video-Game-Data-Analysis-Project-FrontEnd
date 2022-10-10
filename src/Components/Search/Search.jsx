@@ -13,11 +13,10 @@ const Search = () => {
 
   useEffect(() => {
   fetchSearchResults()
-  },)
+  }, [searchInput])
 
-  function passedSearchTerms(event){
-   event.preventDefault(); 
-    setSearchInput(searchInput)
+  function passedSearchTerms(searchTerm){
+    setSearchInput(searchTerm)
   }
   const fetchSearchResults = async () => {
     let response = await axios.get("http://localhost:8080/all")

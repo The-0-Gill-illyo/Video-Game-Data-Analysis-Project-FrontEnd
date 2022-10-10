@@ -18,15 +18,21 @@ const ConsoleSales = (props) => {
         let originalPlatform = [...new Set(platforms)]
 
 
-        // let publishers = filterPublishers.map(game => {
+        // let publishers = filterData.map(game => {
         //     return game.platform
         // });
         // let originalPublishers = [...new Set(publishers)]
 
+        // let gamesByPublisher = originalPublishers.map(publisher =>{
+        //     let allGamesForPublisher = allGamesForPlatform.filter(game => game.publisher == publisher)
+        //     console.log("Publisher games", allGamesForPublisher)
+        // })
+        //     console.log("games for plat", allGamesForPlatform)
+
 
         let consoleArray = originalPlatform.map(platform => {
             let allGamesForPlatform = filterData.filter(game => game.platform == platform)
-        console.log("Console Array", consoleArray)
+            console.log("Platform Games", allGamesForPlatform)
 
 
           
@@ -35,10 +41,13 @@ const ConsoleSales = (props) => {
                         return a + b[game];
                     }, 0);
                 }
+                
             let totalConsoleGames = allGamesForPlatform.sum(allGamesForPlatform, 'globalsales')
 
             return [platform, totalConsoleGames]
         })
+
+        console.log("Console Array", consoleArray)
 
         const data = [
             ["Platform", "Sales(in millions)"],
