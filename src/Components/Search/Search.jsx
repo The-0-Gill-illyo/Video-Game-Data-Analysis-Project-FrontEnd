@@ -9,10 +9,11 @@ const Search = () => {
   const [searchInput, setSearchInput] = useState("");
   const [videoGame, setVideoGame] = useState([])
   const [games, setGames] = useState([]);
-  const [showMore, setShowMore] = useState(false)
+  const [sameGames, setSameGames] = useState([])
 
   useEffect(() => {
   fetchSearchResults()
+  combineSameGames()
   }, [searchInput])
 
   // useEffect (() =>{
@@ -27,8 +28,10 @@ const Search = () => {
     setSearchGames(response.data)
     let filteredSearch = searchGames.filter(game => game.name.includes(searchInput));
     setVideoGame(filteredSearch)
+    console.log("Games", videoGame)
   }
 
+  
 
       return ( 
         <div>
@@ -37,10 +40,7 @@ const Search = () => {
                 return(
                   <div key={index}>
                     <h3>{game.name}</h3>
-                    <div>
-                      {showMore ? <Game parentEntries={game}/> : ''}
-                      <button onClick={()=> setShowMore(!showMore)} >See More</button>
-                    </div>
+                    <Game parentEntries = {game}/>
                   </div>
                 )
               })}

@@ -4,7 +4,8 @@ import {Chart} from 'react-google-charts';
 const GameSales = () => {
 
     const data = [
-        ["Task", "Hours per Day"],
+        
+        ["Console", "Sales"],
         ["Work", 11],
         ["Eat", 2],
         ["Commute", 2],
@@ -15,6 +16,7 @@ const GameSales = () => {
 
     return ( 
         <div>
+            <h2>Copies Sold per Console</h2>
             <Chart
             chartType="PieChart"
             data={data}
