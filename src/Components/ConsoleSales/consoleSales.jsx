@@ -2,9 +2,6 @@ import {Chart} from 'react-google-charts';
 
 
 
-
-
-
 const ConsoleSales = (props) => {
 
     function publisherDataTable(){
@@ -33,9 +30,7 @@ const ConsoleSales = (props) => {
         let consoleArray = originalPlatform.map(platform => {
             let allGamesForPlatform = filterData.filter(game => game.platform == platform)
             console.log("Platform Games", allGamesForPlatform)
-
-
-          
+                if(allGamesForPlatform.publisher)
                 allGamesForPlatform.sum = function(items, game){
                     return items.reduce(function(a, b){
                         return a + b[game];

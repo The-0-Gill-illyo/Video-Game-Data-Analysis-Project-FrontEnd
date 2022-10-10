@@ -10,6 +10,7 @@ const Search = () => {
   const [searchInput, setSearchInput] = useState("");
   const [videoGame, setVideoGame] = useState([])
   const [games, setGames] = useState([]);
+  const [showMore, setShowMore] = useState(false)
 
   useEffect(() => {
   fetchSearchResults()
@@ -51,7 +52,6 @@ const Search = () => {
                 <th>Japan Sales</th>
                 <th>Other Sales</th>
                 <th>Global Sales</th>
-              {/* { <button type="more" className="btn btn-primary" onClick={ () => {<Game parentEntries={games}/>}}>See More</button> } */}
               </tr>
             </thead>
             <tbody>
@@ -69,6 +69,10 @@ const Search = () => {
                     <td>{game.japansales}</td>
                     <td>{game.othersales}</td>
                     <td>{game.globalsales}</td>
+                    <div>
+                      {showMore ? <Game parentEntries={games}/> : ''}
+                      <button onClick={()=> setShowMore(!showMore)} >See More</button>
+                    </div>
                   </tr>
                 )
               })}
