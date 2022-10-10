@@ -4,7 +4,7 @@ import './App.css';
 
 import Search from './Components/Search/Search';
 import RecordsGraph from './Components/RecordsGraph/RecordsGraph';
-import CustomRespose from './Components/CustomResponse/customResonse';
+import CustomRespose from './Components/CustomResponse/CustomResonse';
 import ConsoleSales from './Components/ConsoleSales/ConsoleSales';
 
 function App() {
