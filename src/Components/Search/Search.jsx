@@ -13,7 +13,7 @@ const Search = () => {
 
   useEffect(() => {
   fetchSearchResults()
-  combineSameGames()
+  // combineSameGames()
   }, [searchInput])
 
   // useEffect (() =>{

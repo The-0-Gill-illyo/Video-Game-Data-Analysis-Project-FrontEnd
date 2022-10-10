@@ -41,6 +41,7 @@ const Game = (props) => {
               <td>{props.parentEntries.globalsales}</td>
             </tr>
           </tbody>
+          <button onClick={() => setShowMore(!showMore)}>Show Less</button>
         </table>
       )}
     </div>
